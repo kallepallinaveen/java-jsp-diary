@@ -14,7 +14,7 @@ pipeline{
         stage("deploy a code"){
             steps{ 
                 sshagent(['deploy_java']) {
-                   sh "scp -o StrictHostKeyChecking=no Project/java-app/target/java-jsp-diary.war ubuntu@54.166.171.81:/opt/tomcat/apache-tomcat-10.1.12/webapps" 
+                   sh "scp -o StrictHostKeyChecking=no /java-app/target/java-jsp-diary.war ubuntu@54.166.171.81:/opt/tomcat/apache-tomcat-10.1.12/webapps" 
                 }                             
             }
         }         
