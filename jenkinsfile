@@ -1,0 +1,17 @@
+pipeline{
+    agent any
+    stages{
+        stage{"build code by using mvn"}
+        steps{
+            script{
+                sh " mvn clean install"
+            }
+        }
+        stage{"test code by using mvn"}
+        steps{
+            script{
+                sh " mvn test"
+            }
+        }
+    }
+}
